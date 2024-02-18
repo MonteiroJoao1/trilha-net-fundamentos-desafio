@@ -5,6 +5,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
+string placa;
 
 Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
                   "Digite o preço inicial:");
@@ -33,16 +34,20 @@ while (exibirMenu)
     {
         case "1":
             Console.WriteLine("Digite a placa do veículo para estacionar:");
-            string placa = Console.ReadLine();
+            placa = Console.ReadLine();
+
             es.AdicionarVeiculo(placa);
             break;
 
         case "2":
             Console.WriteLine("Digite a placa do veículo para remover:");
-            string placa = Console.ReadLine();
+            placa = Console.ReadLine();
+
             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
             string horas = Console.ReadLine();
-            es.RemoverVeiculo(placa, horas);
+            int hora = int.Parse(horas);
+
+            es.RemoverVeiculo(placa, hora);
             break;
 
         case "3":
