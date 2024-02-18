@@ -14,19 +14,17 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo(string placa)
         {
-            veiculos.Add(placa.ToUpper);
+            veiculos.Add(placa);
             Console.WriteLine("Veículo adicionado com sucesso!");
         }
 
-        public void RemoverVeiculo(string placa, string hora)
+        public void RemoverVeiculo(string placa, int horas)
         {
             int indice = veiculos.IndexOf(placa);
             if (indice != -1)
             {
-                int horas           = 0;
                 decimal valorTotal  = 0;
-                int horas           = int.TryParse(hora, out 0);
-                valorTotal          = precoInicial + (horas * precoPorHora);
+                valorTotal          = this.precoInicial + (horas * precoPorHora);
 
                 veiculos.Remove(placa);
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
